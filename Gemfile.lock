@@ -466,6 +466,7 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.8)
     timecop (0.9.1)
+    timezone (1.3.3)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unf (0.1.4)
@@ -562,6 +563,7 @@ DEPENDENCIES
   sshkit-sudo
   stamp
   timecop
+  timezone (~> 1.0)
   vcr
   versionist!
   webmock
@@ -572,4 +574,4 @@ RUBY VERSION
    ruby 2.5.3p105
 
 BUNDLED WITH
-   1.17.1
+   1.17.2

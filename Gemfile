@@ -57,6 +57,7 @@ gem 'sinatra'#, '>= 1.3.0', require: nil
 gem 'stamp'
 gem 'versionist', github: 'bploetz/versionist'
 gem 'workflow'
+gem 'timezone', '~> 1.0'
 
 # eventMachine MQTT handler
 gem 'em-mqtt'#, '~> 0.0.4'

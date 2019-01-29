@@ -187,7 +187,8 @@ class Device < ActiveRecord::Base
         geohash: geohash,
         city: city,
         country_code: country_code,
-        country: country_name
+        country: country_name,
+        timezone_utc_offset: utc_offset
       },
       sensors: []
     }
@@ -243,6 +244,15 @@ class Device < ActiveRecord::Base
 
     def do_geocoding
       reverse_geocode if (latitude_changed? or longitude_changed?) or city.blank?
+      get_timezone if (latitude_changed? or longitude_changed?)
+    end
+
+    def get_timezone
+      timezone = Timezone.lookup(latitude, longitude)
+
+      if timezone
+        self.utc_offset = timezone.utc_offset
+      end
     end
 
     def nullify_other_mac_addresses

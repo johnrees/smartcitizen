@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_16_161536) do
+ActiveRecord::Schema.define(version: 2019_01_29_183926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_01_16_161536) do
     t.datetime "notify_low_battery_timestamp", default: "2019-01-16 16:19:35"
     t.boolean "notify_low_battery", default: false
     t.boolean "notify_stopped_publishing", default: false
+    t.integer "utc_offset"
     t.index ["device_token"], name: "index_devices_on_device_token", unique: true
     t.index ["geohash"], name: "index_devices_on_geohash"
     t.index ["kit_id"], name: "index_devices_on_kit_id"
